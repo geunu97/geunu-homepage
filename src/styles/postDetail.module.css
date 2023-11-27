@@ -1,0 +1,30 @@
+.postDetail {
+  width: 60%;
+  min-width: 400px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.postHeader {
+  border-bottom: 1px solid lightgray;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.postTitle {
+  font-weight: 800;
+  font-size: 34px;
+}
+
+.postAuthor {
+  margin: 20px 0 10px 0;
+}
+
+.postDate {
+  color: #757575;
+  font-size: 12px;
+}
+
+.postContent {
+  margin-top: 20px;
+}
