@@ -21,13 +21,7 @@ export default function PostList({ posts }: PostListType) {
           <p className={styles.postDate}>{post.header.date}</p>
         </Link>
       ))}
-      <Pagination
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        postsPerPage={postsPerPage}
-        // postsLength={posts.length}
-        postsLength={101}
-      />
+      <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} postsPerPage={postsPerPage} postsLength={posts.length} />
     </div>
   )
 }
