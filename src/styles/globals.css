@@ -39,8 +39,7 @@ table {
 }
 
 body {
-  font-family: "Noto Sans KR", helvetica, "Apple SD Gothic Neo",
-    "NanumBarunGothic", sans-serif;
+  font-family: 'Noto Sans KR', helvetica, 'Apple SD Gothic Neo', 'NanumBarunGothic', sans-serif;
   font-size: 14px;
   font-weight: 400;
 }

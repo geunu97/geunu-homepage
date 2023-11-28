@@ -1,5 +1,5 @@
-import Link from "next/link";
-import styles from "../styles/blogHeader.module.css";
+import Link from 'next/link'
+import styles from '../styles/blogHeader.module.css'
 
 export default function BlogHeader() {
   return (
@@ -9,5 +9,5 @@ export default function BlogHeader() {
         <button>다크모드</button>
       </div>
     </div>
-  );
+  )
 }

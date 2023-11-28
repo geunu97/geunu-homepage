@@ -1,0 +1,29 @@
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  gap: 10px;
+}
+
+.paginationButton {
+  color: #333;
+  border: none;
+  font-weight: 500;
+  background-color: inherit;
+  font-size: 14px;
+  width: 32px;
+  height: 32px;
+}
+
+.paginationButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.activeButton {
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+}

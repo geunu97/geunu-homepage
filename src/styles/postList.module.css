@@ -7,10 +7,7 @@
 
 .postItem {
   padding: 20px 0;
-}
-
-.postItem + .postItem {
-  border-top: 0.5px solid lightgray;
+  border-bottom: 0.5px solid lightgray;
 }
 
 .postTitle {

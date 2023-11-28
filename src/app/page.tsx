@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -6,5 +6,5 @@ export default function Home() {
       예정
       <Link href="blog">블로그로 이동</Link>
     </main>
-  );
+  )
 }
