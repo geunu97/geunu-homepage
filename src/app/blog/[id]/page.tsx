@@ -1,4 +1,3 @@
-import BlogHeader from '../../../../src/components/BlogHeader'
 import getPostDetail from '../../../utils/getPostDetail'
 import dynamic from 'next/dynamic'
 
@@ -17,10 +16,7 @@ export default async function Blog({ params }: BlogProps) {
 
   return (
     <>
-      <BlogHeader />
-      <div style={{ paddingTop: '90px' }}>
-        <PostDetail header={header} content={content} />
-      </div>
+      <PostDetail header={header} content={content} />
     </>
   )
 }
