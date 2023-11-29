@@ -1,5 +1,4 @@
 .imageOverlay {
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,11 +15,12 @@
 }
 
 .imageOverlay > figcaption {
+  width: 580px;
+  height: 380px;
   position: absolute;
-  left: 20px;
-  right: 20px;
-  top: 20px;
-  bottom: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   padding: 40px;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.65);
@@ -30,15 +30,11 @@
 
 .imageOverlay:hover > figcaption {
   opacity: 1;
-  left: 45px;
-  right: 45px;
-  top: 45px;
-  bottom: 45px;
+  width: 540px;
+  height: 340px;
   transition:
-    left 1s,
-    right 1s,
-    top 1s,
-    bottom 1s;
+    width 1s,
+    height 1s;
 }
 
 .title {
@@ -68,5 +64,15 @@
   .imageOverlay > img {
     width: 400px;
     height: 300px;
+  }
+
+  .imageOverlay > figcaption {
+    width: 380px;
+    height: 280px;
+  }
+
+  .imageOverlay:hover > figcaption {
+    width: 360px;
+    height: 260px;
   }
 }

@@ -9,7 +9,7 @@ interface ImageOverlayType {
 }
 
 const ImageOverlay = ({ imageUrl, title, description }: ImageOverlayType) => (
-  <figure className={styles.imageOverlay} style={{ width: '650px', height: '450px' }}>
+  <figure className={styles.imageOverlay}>
     <Image src={imageUrl} alt="포트폴리오 이미지" width={600} height={400} />
     <figcaption>
       <p className={styles.title}>{title}</p>
