@@ -11,16 +11,13 @@ export default function Header() {
         </div>
         <ul className={styles.rightWrapper}>
           <li className="exo2-font">
-            <Link href="./">Intro</Link>
+            <Link href="/">Home</Link>
           </li>
           <li className="exo2-font">
-            <Link href="./">Portfolio</Link>
+            <Link href="/blog">Blog</Link>
           </li>
           <li className="exo2-font">
-            <Link href="./">Link</Link>
-          </li>
-          <li className="exo2-font">
-            <Link href="./">Login</Link>
+            <Link href="/login">Login</Link>
           </li>
         </ul>
       </div>
