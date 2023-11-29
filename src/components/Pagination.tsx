@@ -4,14 +4,14 @@ import { calculatePaginationInfo } from '../utils/calculatePagination'
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import styles from '../styles/pagination.module.css'
 
-interface PaginationProps {
+interface PaginationType {
   currentPage: number
   setCurrentPage: Dispatch<SetStateAction<number>>
   postsPerPage: number
   postsLength: number
 }
 
-const Pagination = ({ currentPage, setCurrentPage, postsPerPage, postsLength }: PaginationProps) => {
+const Pagination = ({ currentPage, setCurrentPage, postsPerPage, postsLength }: PaginationType) => {
   const pagesPerSlider = 10
   const totalPages = Array.from({ length: Math.ceil(postsLength / postsPerPage) }, (_, index) => index + 1)
   const { currentSlider, startPage, endPage } = calculatePaginationInfo(currentPage, pagesPerSlider, totalPages)

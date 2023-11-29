@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&family=Ephesis&family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Dosis:wght@200;400&family=Ephesis&family=Exo+2&family=Josefin+Sans&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Dosis:wght@200;400&family=Ephesis&family=Exo+2&family=Josefin+Sans&family=Nova+Square&family=Oswald:wght@700&family=Roboto:wght@100&display=swap');
 
 * {
   margin: 0;
@@ -58,4 +59,8 @@ body {
 
 .exo2-font {
   font-family: 'Exo 2', sans-serif;
+}
+
+.novaSquare-font {
+  font-family: 'Nova Square', sans-serif;
 }

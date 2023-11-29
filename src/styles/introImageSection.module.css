@@ -17,7 +17,6 @@
 .introContentSection > .title {
   font-size: 32px;
   color: #7d9aac;
-  /* color: black; */
 }
 
 .introContentSection > .subTitle {
@@ -25,7 +24,6 @@
   font-weight: 700;
   margin-top: 10px;
   color: #7d9aac;
-  /* color: black; */
   letter-spacing: 5px;
 }
 
@@ -39,6 +37,16 @@
 .borderBottom {
   position: absolute;
   bottom: 0;
-  border: 2px solid white;
+  border: 2px solid rgb(162, 190, 206);
   width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  .introContentSection > .title {
+    font-size: 24px;
+  }
+
+  .introContentSection > .subTitle {
+    font-size: 60px;
+  }
 }

@@ -3,7 +3,7 @@ import styles from '../styles/logo.module.css'
 
 export default function Logo() {
   return (
-    <Link href="/" className={`${styles.logo} exo2-font`}>
+    <Link href="/" className={`${styles.logo} novaSquare-font`}>
       Geunu
     </Link>
   )

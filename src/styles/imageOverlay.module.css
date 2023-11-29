@@ -1,0 +1,72 @@
+.imageOverlay {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.imageOverlay > img {
+  display: block;
+  border-radius: 20px;
+}
+
+.imageOverlay:hover > img {
+  opacity: 0.5;
+}
+
+.imageOverlay > figcaption {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 20px;
+  bottom: 20px;
+  padding: 40px;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+  border-radius: 15px;
+}
+
+.imageOverlay:hover > figcaption {
+  opacity: 1;
+  left: 45px;
+  right: 45px;
+  top: 45px;
+  bottom: 45px;
+  transition:
+    left 1s,
+    right 1s,
+    top 1s,
+    bottom 1s;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  opacity: 0;
+}
+
+.description {
+  font-size: 14px;
+  margin-top: 15px;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.imageOverlay:hover .description {
+  transform: translateY(0);
+}
+
+.imageOverlay:hover .title,
+.imageOverlay:hover .description {
+  opacity: 1;
+  transition: all ease 1.5s;
+}
+
+@media screen and (max-width: 640px) {
+  .imageOverlay > img {
+    width: 400px;
+    height: 300px;
+  }
+}
