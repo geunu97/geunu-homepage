@@ -34,7 +34,7 @@ export default function IntroPortfolioSection() {
     <div className={styles.introPortfolioSection}>
       <p className={`${styles.title} ephesis-font`}>Portfolio</p>
 
-      <Slider {...settings} className={styles.aa}>
+      <Slider {...settings}>
         {portfolioItems.map((item, index) => (
           <div key={index} className={styles.card}>
             <ImageOverlay imageUrl={item.imageUrl} title={item.title} description={item.description} />
