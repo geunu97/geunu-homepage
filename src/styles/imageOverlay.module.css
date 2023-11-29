@@ -2,19 +2,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.wrapper {
+  width: 600px;
+  height: 400px;
   position: relative;
 }
 
-.imageOverlay > img {
+.wrapper > img {
   display: block;
   border-radius: 20px;
 }
 
-.imageOverlay:hover > img {
+.wrapper:hover > img {
   opacity: 0.5;
 }
 
-.imageOverlay > figcaption {
+.wrapper > figcaption {
   width: 580px;
   height: 380px;
   position: absolute;
@@ -28,7 +33,7 @@
   border-radius: 15px;
 }
 
-.imageOverlay:hover > figcaption {
+.wrapper:hover > figcaption {
   opacity: 1;
   width: 540px;
   height: 340px;
@@ -50,28 +55,29 @@
   opacity: 0;
 }
 
-.imageOverlay:hover .description {
+.wrapper:hover .description {
   transform: translateY(0);
 }
 
-.imageOverlay:hover .title,
-.imageOverlay:hover .description {
+.wrapper:hover .title,
+.wrapper:hover .description {
   opacity: 1;
   transition: all ease 1.5s;
 }
 
 @media screen and (max-width: 640px) {
-  .imageOverlay > img {
+  .wrapper,
+  .wrapper > img {
     width: 400px;
     height: 300px;
   }
 
-  .imageOverlay > figcaption {
+  .wrapper > figcaption {
     width: 380px;
     height: 280px;
   }
 
-  .imageOverlay:hover > figcaption {
+  .wrapper:hover > figcaption {
     width: 360px;
     height: 260px;
   }

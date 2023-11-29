@@ -10,11 +10,13 @@ interface ImageOverlayType {
 
 const ImageOverlay = ({ imageUrl, title, description }: ImageOverlayType) => (
   <figure className={styles.imageOverlay}>
-    <Image src={imageUrl} alt="포트폴리오 이미지" width={600} height={400} />
-    <figcaption>
-      <p className={styles.title}>{title}</p>
-      <p className={styles.description}>{description}</p>
-    </figcaption>
+    <div className={styles.wrapper}>
+      <Image src={imageUrl} alt="포트폴리오 이미지" width={600} height={400} />
+      <figcaption>
+        <p className={styles.title}>{title}</p>
+        <p className={styles.description}>{description}</p>
+      </figcaption>
+    </div>
     {/* <a href="#">링크 넣기(깃허브 등)</a> */}
   </figure>
 )
