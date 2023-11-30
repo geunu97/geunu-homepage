@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import styles from '../styles/introPortfolioSection.module.css'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import ImageOverlay from './ImageOverlay'
-import StretchAnimationEffect from './StretchAnimationEffect'
+import styles from '../styles/introPortfolioSection.module.css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import ImageOverlay from './ImageOverlay';
+import StretchAnimationEffect from './StretchAnimationEffect';
 
 export default function IntroPortfolioSection() {
   const settings = {
@@ -16,7 +16,7 @@ export default function IntroPortfolioSection() {
     autoplaySpeed: 4000,
     slidesToShow: 1,
     pauseOnHover: true,
-  }
+  };
 
   const portfolioItems = [
     {
@@ -29,15 +29,15 @@ export default function IntroPortfolioSection() {
       title: 'Fleece Marigold 2',
       description: 'Which is worse, that everyone has his price, or that the price is always so low.',
     },
-  ]
+  ];
 
   return (
     <div className={styles.introPortfolioSection}>
-      <StretchAnimationEffect targetHeight={400}>
+      <StretchAnimationEffect targetHeight={10}>
         <p className={`${styles.title} ephesis-font`}>Portfolio</p>
       </StretchAnimationEffect>
 
-      <StretchAnimationEffect targetHeight={700}>
+      <StretchAnimationEffect targetHeight={30}>
         <Slider {...settings}>
           {portfolioItems.map((item, index) => (
             <div key={index} className={styles.card}>
@@ -47,5 +47,5 @@ export default function IntroPortfolioSection() {
         </Slider>
       </StretchAnimationEffect>
     </div>
-  )
+  );
 }

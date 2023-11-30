@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import styles from '../styles/introSkillsSection.module.css'
-import Image from 'next/image'
-import StretchAnimationEffect from './StretchAnimationEffect'
+import styles from '../styles/introSkillsSection.module.css';
+import Image from 'next/image';
+import StretchAnimationEffect from './StretchAnimationEffect';
 
 export default function IntroSkillsSection() {
   const frontendSkills = [
@@ -30,15 +30,15 @@ export default function IntroSkillsSection() {
       name: 'Nextjs',
       imageUrl: '/images/nextjs.png',
     },
-  ]
+  ];
 
   return (
     <div className={styles.introSkillsSection}>
-      <StretchAnimationEffect targetHeight={1300}>
+      <StretchAnimationEffect targetHeight={60}>
         <p className={`${styles.title} ephesis-font`}>Skills</p>
       </StretchAnimationEffect>
 
-      <StretchAnimationEffect targetHeight={1600}>
+      <StretchAnimationEffect targetHeight={80}>
         <div className={`${styles.boxWrapper} exo2-font`}>
           <p className={styles.boxTitle}>Frontend</p>
           <div className={styles.skills}>
@@ -52,5 +52,5 @@ export default function IntroSkillsSection() {
         </div>
       </StretchAnimationEffect>
     </div>
-  )
+  );
 }

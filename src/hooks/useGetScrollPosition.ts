@@ -1,21 +1,32 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 const useGetScrollPosition = () => {
-  const [scrollPosition, setScrollPosition] = useState(0)
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [viewportHeight, setViewportHeight] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollPosition(window.scrollY)
-    }
+      const normalizedScrollPosition = (window.scrollY / (document.body.scrollHeight - viewportHeight)) * 100;
 
-    window.addEventListener('scroll', handleScroll)
+      setScrollPosition(normalizedScrollPosition);
+    };
+
+    const handleResize = () => {
+      setViewportHeight(window.innerHeight);
+    };
+
+    setViewportHeight(window.innerHeight);
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [viewportHeight]);
 
-  return scrollPosition
-}
+  return scrollPosition;
+};
 
-export default useGetScrollPosition
+export default useGetScrollPosition;

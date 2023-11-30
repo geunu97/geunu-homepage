@@ -67,3 +67,22 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+@media screen and (max-width: 1024px) {
+  .boxWrapper {
+    width: 600px;
+  }
+  .skill > img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .boxWrapper {
+    width: 350px;
+  }
+  .skills {
+    overflow-x: hidden;
+  }
+}
