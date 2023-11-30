@@ -5,6 +5,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import ImageOverlay from './ImageOverlay'
+import StretchAnimationEffect from './StretchAnimationEffect'
 
 export default function IntroPortfolioSection() {
   const settings = {
@@ -32,15 +33,19 @@ export default function IntroPortfolioSection() {
 
   return (
     <div className={styles.introPortfolioSection}>
-      <p className={`${styles.title} ephesis-font`}>Portfolio</p>
+      <StretchAnimationEffect targetHeight={400}>
+        <p className={`${styles.title} ephesis-font`}>Portfolio</p>
+      </StretchAnimationEffect>
 
-      <Slider {...settings}>
-        {portfolioItems.map((item, index) => (
-          <div key={index} className={styles.card}>
-            <ImageOverlay imageUrl={item.imageUrl} title={item.title} description={item.description} />
-          </div>
-        ))}
-      </Slider>
+      <StretchAnimationEffect targetHeight={700}>
+        <Slider {...settings}>
+          {portfolioItems.map((item, index) => (
+            <div key={index} className={styles.card}>
+              <ImageOverlay imageUrl={item.imageUrl} title={item.title} description={item.description} />
+            </div>
+          ))}
+        </Slider>
+      </StretchAnimationEffect>
     </div>
   )
 }
