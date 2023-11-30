@@ -1,0 +1,12 @@
+.footer {
+  position: fixed;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
