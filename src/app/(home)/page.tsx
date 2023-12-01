@@ -1,6 +1,6 @@
-import IntroImageSection from '@/components/IntroImageSection'
-import IntroPortfolioSection from '@/components/IntroPortfolioSection'
-import IntroSkillsSection from '@/components/IntroSkillsSection'
+import IntroImageSection from '@/components/IntroImageSection';
+import IntroPortfolioSection from '@/components/IntroPortfolioSection';
+import IntroSkillsSection from '@/components/IntroSkillsSection';
 
 export default function Home() {
   return (
@@ -9,5 +9,5 @@ export default function Home() {
       <IntroPortfolioSection />
       <IntroSkillsSection />
     </main>
-  )
+  );
 }

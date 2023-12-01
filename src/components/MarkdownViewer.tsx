@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import 'github-markdown-css/github-markdown.css'
+import 'github-markdown-css/github-markdown.css';
 
 interface MarkdownViewerType {
-  content: string
+  content: string;
 }
 
 export default function MarkdownViewer({ content }: MarkdownViewerType) {
-  return <div className="markdown-body" dangerouslySetInnerHTML={{ __html: content }} />
+  return <div className="markdown-body" dangerouslySetInnerHTML={{ __html: content }} />;
 }

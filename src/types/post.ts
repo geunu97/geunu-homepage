@@ -1,18 +1,18 @@
 export interface PostHeaderType {
-  id: number
-  title: string
-  date: string
-  author: string
+  id: number;
+  title: string;
+  date: string;
+  author: string;
 }
 
 export interface PostContentType {
-  content: string
+  content: string;
 }
 
 export interface PostType extends PostContentType {
-  header: PostHeaderType
+  header: PostHeaderType;
 }
 
 export interface PostListType {
-  posts: PostType[]
+  posts: PostType[];
 }

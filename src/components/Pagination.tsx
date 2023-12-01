@@ -1,24 +1,24 @@
-'use client'
+'use client';
 
-import { calculatePaginationInfo } from '../utils/calculatePagination'
-import { Dispatch, SetStateAction, useEffect } from 'react'
-import styles from '../styles/pagination.module.css'
+import { calculatePaginationInfo } from '../utils/calculatePagination';
+import { Dispatch, SetStateAction, useEffect } from 'react';
+import styles from '../styles/pagination.module.css';
 
 interface PaginationType {
-  currentPage: number
-  setCurrentPage: Dispatch<SetStateAction<number>>
-  postsPerPage: number
-  postsLength: number
+  currentPage: number;
+  setCurrentPage: Dispatch<SetStateAction<number>>;
+  postsPerPage: number;
+  postsLength: number;
 }
 
 const Pagination = ({ currentPage, setCurrentPage, postsPerPage, postsLength }: PaginationType) => {
-  const pagesPerSlider = 10
-  const totalPages = Array.from({ length: Math.ceil(postsLength / postsPerPage) }, (_, index) => index + 1)
-  const { currentSlider, startPage, endPage } = calculatePaginationInfo(currentPage, pagesPerSlider, totalPages)
+  const pagesPerSlider = 10;
+  const totalPages = Array.from({ length: Math.ceil(postsLength / postsPerPage) }, (_, index) => index + 1);
+  const { currentSlider, startPage, endPage } = calculatePaginationInfo(currentPage, pagesPerSlider, totalPages);
 
   useEffect(() => {
-    setCurrentPage(startPage)
-  }, [currentSlider])
+    setCurrentPage(startPage);
+  }, [currentSlider]);
 
   if (postsLength !== 0) {
     return (
@@ -43,10 +43,10 @@ const Pagination = ({ currentPage, setCurrentPage, postsPerPage, postsLength }: 
           &gt;
         </button>
       </div>
-    )
+    );
   }
 
-  return <></>
-}
+  return <></>;
+};
 
-export default Pagination
+export default Pagination;

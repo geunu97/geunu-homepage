@@ -1,16 +1,16 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import styles from '../styles/postList.module.css'
-import { PostListType } from '../types/post'
-import { useState } from 'react'
-import Pagination from './Pagination'
-import { getPageRange } from '@/utils/calculatePagination'
+import Link from 'next/link';
+import styles from '../styles/postList.module.css';
+import { PostListType } from '../types/post';
+import { useState } from 'react';
+import Pagination from './Pagination';
+import { getPageRange } from '@/utils/calculatePagination';
 
 export default function PostList({ posts }: PostListType) {
-  const [currentPage, setCurrentPage] = useState(1)
-  const postsPerPage = 10
-  const currentPagePosts = getPageRange(posts, currentPage, postsPerPage)
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 10;
+  const currentPagePosts = getPageRange(posts, currentPage, postsPerPage);
 
   return (
     <div className={styles.postList}>
@@ -23,5 +23,5 @@ export default function PostList({ posts }: PostListType) {
       ))}
       <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} postsPerPage={postsPerPage} postsLength={posts.length} />
     </div>
-  )
+  );
 }

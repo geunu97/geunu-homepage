@@ -3,6 +3,6 @@ const nextConfig = {
   images: {
     domains: ['static.wixstatic.com'],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

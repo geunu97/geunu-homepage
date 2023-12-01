@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import styles from '../styles/postDetail.module.css'
-import { PostType } from '../types/post'
-import MarkdownViewer from './MarkdownViewer'
+import styles from '../styles/postDetail.module.css';
+import { PostType } from '../types/post';
+import MarkdownViewer from './MarkdownViewer';
 
 export default function PostDetail({ header, content }: PostType) {
   return (
@@ -14,5 +14,5 @@ export default function PostDetail({ header, content }: PostType) {
       </div>
       <MarkdownViewer content={content} />
     </div>
-  )
+  );
 }

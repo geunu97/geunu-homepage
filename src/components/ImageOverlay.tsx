@@ -1,11 +1,11 @@
-import React from 'react'
-import styles from '../styles/imageOverlay.module.css'
-import Image from 'next/image'
+import React from 'react';
+import styles from '../styles/imageOverlay.module.css';
+import Image from 'next/image';
 
 interface ImageOverlayType {
-  imageUrl: string
-  title: string
-  description: string
+  imageUrl: string;
+  title: string;
+  description: string;
 }
 
 const ImageOverlay = ({ imageUrl, title, description }: ImageOverlayType) => (
@@ -19,6 +19,6 @@ const ImageOverlay = ({ imageUrl, title, description }: ImageOverlayType) => (
     </div>
     {/* <a href="#">링크 넣기(깃허브 등)</a> */}
   </figure>
-)
+);
 
-export default ImageOverlay
+export default ImageOverlay;

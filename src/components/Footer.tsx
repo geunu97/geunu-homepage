@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import styles from '../styles/footer.module.css'
-import Image from 'next/image'
+import Link from 'next/link';
+import styles from '../styles/footer.module.css';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -15,5 +15,5 @@ export default function Footer() {
         <Image src="/images/linkedin.png" alt="" width={20} height={20} />
       </Link>
     </div>
-  )
+  );
 }
