@@ -12,6 +12,8 @@ export default function PostList({ posts }: PostListType) {
   const postsPerPage = 10;
   const currentPagePosts = getPageRange(posts, currentPage, postsPerPage);
 
+  /* 테스트 */
+
   return (
     <div className={styles.postList}>
       {currentPagePosts?.map((post: any) => (
