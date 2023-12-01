@@ -1,16 +1,8 @@
-import getPostList from '../../utils/getPostList';
-import dynamic from 'next/dynamic';
+import Temporary from '@/components/Temporary';
 
-const PostList = dynamic(() => import('../../components/PostList'), {
-  ssr: false,
-});
+export default function Blog() {
+  // const posts = await getPostList();
 
-export default async function Blog() {
-  const posts = await getPostList();
-
-  return (
-    <>
-      <PostList posts={posts} />
-    </>
-  );
+  // return <>{<PostList posts={posts} />}</>
+  return <Temporary />;
 }
