@@ -5,6 +5,7 @@ import React, { createContext, useReducer } from 'react';
 
 interface UserType {
   isAuth: boolean;
+  user?: UserCredential['user'];
 }
 
 const initialState: UserType = {
