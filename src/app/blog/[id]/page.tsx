@@ -11,8 +11,16 @@ interface BlogProps {
   };
 }
 
-export default async function Blog({ params }: BlogProps) {
-  // const { header, content } = await getPostDetail(params.id);
+// export default async function Blog({ params }: BlogProps) {
+//   const { header, content } = await getPostDetail(params.id);
 
-  return <>{/* <PostDetail header={header} content={content} /> */}</>;
+//   return <><PostDetail header={header} content={content} /> </>;
+// }
+
+export default function BlogDeatil() {
+  return (
+    <>
+      <PostDetail />
+    </>
+  );
 }

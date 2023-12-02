@@ -7,22 +7,37 @@
 
 .postHeader {
   border-bottom: 1px solid lightgray;
-  padding: 20px 0;
+  padding: 20px 0 10px;
   margin-bottom: 20px;
 }
 
-.postTitle {
+.title {
   font-weight: 800;
   font-size: 34px;
+  word-break: break-word;
 }
 
-.postAuthor {
-  margin: 20px 0 10px 0;
-}
-
-.postDate {
-  color: #757575;
+.subTitle {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
   font-size: 12px;
+}
+
+.subTitle > img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.author {
+  margin-right: 15px;
+  font-weight: 700;
+}
+
+.date {
+  color: #757575;
 }
 
 .postContent {
