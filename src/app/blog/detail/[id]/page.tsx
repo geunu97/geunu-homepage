@@ -1,10 +1,5 @@
-// import getPostDetail from '../../../utils/getPostDetail';
+import { getBlogPost } from '@/api/blogPost';
 import PostDetail from '@/components/PostDetail';
-import dynamic from 'next/dynamic';
-
-// const PostDetail = dynamic(() => import('../../../../components/PostDetail'), {
-//   ssr: false,
-// });
 
 interface BlogProps {
   params: {
@@ -18,10 +13,12 @@ interface BlogProps {
 //   return <><PostDetail header={header} content={content} /> </>;
 // }
 
-export default function BlogDeatilPage() {
+export default async function BlogDeatilPage({ params }: BlogProps) {
+  const post = await getBlogPost(params.id);
+
   return (
     <>
-      <PostDetail />
+      <PostDetail post={post} />
     </>
   );
 }

@@ -1,7 +1,8 @@
+import { getBlogPosts } from '@/api/blogPost';
 import PostList from '@/components/PostList';
 
-export default function BlogPage() {
-  // const posts = await getPostList();
+export default async function BlogPage() {
+  const posts = await getBlogPosts();
 
   return (
     <div
@@ -10,7 +11,7 @@ export default function BlogPage() {
         minHeight: '100vh',
       }}
     >
-      <PostList />
+      <PostList posts={posts} />
     </div>
   );
 }

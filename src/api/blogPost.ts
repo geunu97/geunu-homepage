@@ -3,7 +3,7 @@ import { collection, doc, getDoc, getDocs, setDoc, deleteDoc } from 'firebase/fi
 
 const collectionText = 'blogPost';
 
-export const getPosts = async () => {
+export const getBlogPosts = async () => {
   try {
     const docsCollection = collection(db, collectionText);
     const docsSnap = await getDocs(docsCollection);
@@ -17,7 +17,7 @@ export const getPosts = async () => {
   }
 };
 
-export const getPost = async (postId: number) => {
+export const getBlogPost = async (postId: string) => {
   try {
     const docRef = doc(db, collectionText, `${postId}`);
     const docSnap = await getDoc(docRef);
@@ -27,9 +27,9 @@ export const getPost = async (postId: number) => {
   }
 };
 
-export const createPost = async () => {
+export const createBlogPost = async () => {
   try {
-    const latestPostId = await getLatestPostId();
+    const latestPostId = await getLatestBlogPostId();
     const docRef = doc(db, collectionText, `${latestPostId + 1}`);
     await setDoc(docRef, { contents: '데이터 저장 테스트' });
   } catch (error) {
@@ -38,7 +38,7 @@ export const createPost = async () => {
   }
 };
 
-export const deletePost = async (postId: number) => {
+export const deleteBlogPost = async (postId: string) => {
   try {
     const docRef = doc(db, collectionText, `${postId}`);
     await deleteDoc(docRef);
@@ -47,7 +47,7 @@ export const deletePost = async (postId: number) => {
   }
 };
 
-export const getLatestPostId = async () => {
-  const posts = await getPosts();
+export const getLatestBlogPostId = async () => {
+  const posts = await getBlogPosts();
   return posts.length !== 0 ? posts.at(-1).postId : 0;
 };
