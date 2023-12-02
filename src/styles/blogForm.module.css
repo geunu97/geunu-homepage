@@ -1,0 +1,34 @@
+.blogForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+
+  width: 80%;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.blogForm > input,
+.blogForm > textarea {
+  width: 100%;
+  max-width: 800px;
+  outline: none;
+  padding: 10px;
+}
+
+.submitWrapper {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: end;
+}
+
+.submitWrapper > button {
+  border: none;
+  color: white;
+  background-color: black;
+  padding: 8px 13px;
+  border-radius: 5px;
+}

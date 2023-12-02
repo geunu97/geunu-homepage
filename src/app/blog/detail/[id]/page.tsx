@@ -1,9 +1,10 @@
 // import getPostDetail from '../../../utils/getPostDetail';
+import PostDetail from '@/components/PostDetail';
 import dynamic from 'next/dynamic';
 
-const PostDetail = dynamic(() => import('../../../components/PostDetail'), {
-  ssr: false,
-});
+// const PostDetail = dynamic(() => import('../../../../components/PostDetail'), {
+//   ssr: false,
+// });
 
 interface BlogProps {
   params: {
@@ -17,7 +18,7 @@ interface BlogProps {
 //   return <><PostDetail header={header} content={content} /> </>;
 // }
 
-export default function BlogDeatil() {
+export default function BlogDeatilPage() {
   return (
     <>
       <PostDetail />
