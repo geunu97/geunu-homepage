@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import SessionStorageLoader from '@/components/SessionStorageLoader';
 import { UserProvider } from '@/store/UserProvider';
 import { ToastContainer } from 'react-toastify';
+import AuthGuard from '@/components/AuthGuard';
 import '../styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -18,10 +19,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <UserProvider>
           <SessionStorageLoader>
-            <Header />
-            {children}
-            <Footer />
-            <ToastContainer />
+            <AuthGuard>
+              <Header />
+              {children}
+              <Footer />
+              <ToastContainer />
+            </AuthGuard>
           </SessionStorageLoader>
         </UserProvider>
       </body>

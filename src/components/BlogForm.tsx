@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent, useContext, useEffect } from 'react';
+import { useState, FormEvent, useContext } from 'react';
 import { useRouter } from 'next/navigation';
 import { PostRequestType, PostResponseType } from '@/types/post';
 import { createBlogPost, updateBlogPost } from '@/api/blogPost';
@@ -55,12 +55,6 @@ export default function BlogForm({ post }: BlogFormProps) {
       return await updateBlogPost(post.postId, { title, content });
     }
   };
-
-  useEffect(() => {
-    if (!state.isAuth) {
-      router.push('/');
-    }
-  }, [state.isAuth, router]);
 
   useEffectAfterMount(() => {
     if (post) {

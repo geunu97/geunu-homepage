@@ -2,14 +2,14 @@
 
 import { login } from '@/api/auth';
 import styles from '@/styles/loginForm.module.css';
-import { useState, FormEvent, useContext, useEffect } from 'react';
+import { useState, FormEvent, useContext } from 'react';
 import sessionStorageHandler from '@/utils/sessionStorageHandler';
 import { useRouter } from 'next/navigation';
 import UserContext from '@/store/UserProvider';
 
 export default function LoginForm() {
   const router = useRouter();
-  const { state, dispatch } = useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,12 +22,6 @@ export default function LoginForm() {
       router.push('/');
     }
   };
-
-  useEffect(() => {
-    if (state.isAuth) {
-      router.push('/');
-    }
-  }, [state.isAuth, router]);
 
   return (
     <>
