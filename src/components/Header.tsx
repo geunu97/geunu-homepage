@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import styles from '../styles/header.module.css';
+import styles from '@/styles/header.module.css';
 import Logo from './Logo';
 import { FormEvent, useContext } from 'react';
 import { logout } from '@/api/auth';

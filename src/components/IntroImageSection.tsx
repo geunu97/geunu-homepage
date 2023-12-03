@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import styles from '../styles/introImageSection.module.css';
-import useTextRotator from '../hooks/useTextRotator';
+import styles from '@/styles/introImageSection.module.css';
+import useTextRotator from '@/hooks/useTextRotator';
 
 export default function IntroImageSection() {
   const introTexts = ['Frontend Developer.', 'Passionate Person.', 'Ambitious Person.'];

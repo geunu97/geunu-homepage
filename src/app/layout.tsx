@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import SessionStorageLoader from '@/components/SessionStorageLoader';
+import { UserProvider } from '@/store/UserProvider';
+import { ToastContainer } from 'react-toastify';
 import '../styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
-import Header from '../../src/components/Header';
-import Footer from '../../src/components/Footer';
-import { UserProvider } from '@/store/UserProvider';
-import SessionStorageLoader from '@/components/SessionStorageLoader';
-import { ToastContainer } from 'react-toastify';
 
 export const metadata: Metadata = {
   title: "geunu's page",

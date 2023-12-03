@@ -1,6 +1,6 @@
 import BlogForm from '@/components/BlogForm';
 
-export default function BlogFormPage() {
+export default function BlogRegisterPage() {
   return (
     <>
       <BlogForm />

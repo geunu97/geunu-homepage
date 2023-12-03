@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '../styles/sidebar.module.css';
+import styles from '@/styles/sidebar.module.css';
 
 export default function Sidebar() {
   return (

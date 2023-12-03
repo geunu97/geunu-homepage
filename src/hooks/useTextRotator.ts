@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import convertTextArray from '../utils/covertTextToArray';
+import convertTextArray from '@/utils/covertTextToArray';
 
 const useTextRotator = (texts: string[], interval = 100) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);

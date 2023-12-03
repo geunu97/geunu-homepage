@@ -1,7 +1,7 @@
 'use client';
 
 import { login } from '@/api/auth';
-import styles from '../styles/loginForm.module.css';
+import styles from '@/styles/loginForm.module.css';
 import { useState, FormEvent, useContext, useEffect } from 'react';
 import sessionStorageHandler from '@/utils/sessionStorageHandler';
 import { useRouter } from 'next/navigation';

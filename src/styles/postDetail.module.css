@@ -1,6 +1,6 @@
 .postDetail {
   width: 60%;
-  min-width: 400px;
+  min-width: 350px;
   max-width: 1000px;
   margin: 0 auto;
   padding: 50px 0;
@@ -21,26 +21,47 @@
 .subTitle {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-top: 30px;
+}
+
+.subTitleLeft {
+  display: flex;
+  align-items: center;
   font-size: 12px;
 }
 
-.subTitle > img {
+.subTitleLeft > img {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.author {
+.subTitleLeft > .author {
   margin-right: 15px;
   font-weight: 700;
 }
 
-.date {
+.subTitleLeft > .date {
   color: #757575;
 }
 
-.postContent {
+.subTitleRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.subTitleRight > a,
+.subTitleRight > button {
+  background-color: white;
+  border: none;
+  font-size: 11px;
+  color: gray;
+}
+
+.postContentWrapper {
+  word-break: break-word;
   margin-top: 20px;
 }

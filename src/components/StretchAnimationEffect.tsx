@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '../styles/stretchAnimationEffect.module.css';
+import styles from '@/styles/stretchAnimationEffect.module.css';
 import useGetScrollPosition from '@/hooks/useGetScrollPosition';
 
 interface StretchAnimationEffectProps {

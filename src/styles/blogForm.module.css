@@ -3,32 +3,37 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 50px;
+  gap: 25px;
 
-  width: 80%;
+  width: 60%;
+  min-width: 350px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
-.blogForm > input,
-.blogForm > textarea {
+.blogForm > input {
   width: 100%;
-  max-width: 800px;
   outline: none;
-  padding: 10px;
+  padding: 10px 10px;
+  border: none;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.contentWrapper {
+  width: 100%;
 }
 
 .submitWrapper {
   width: 100%;
-  max-width: 800px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .submitWrapper > button {
   border: none;
   color: white;
   background-color: black;
-  padding: 8px 13px;
+  padding: 10px 18px;
   border-radius: 5px;
 }

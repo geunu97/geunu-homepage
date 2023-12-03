@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '../styles/loading.module.css';
+import styles from '@/styles/loading.module.css';
 
 export default function Loading() {
   return (

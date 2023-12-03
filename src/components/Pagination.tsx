@@ -1,8 +1,8 @@
 'use client';
 
-import { calculatePaginationInfo } from '../utils/calculatePagination';
+import { calculatePaginationInfo } from '@/utils/calculatePagination';
 import { Dispatch, SetStateAction, useEffect } from 'react';
-import styles from '../styles/pagination.module.css';
+import styles from '@/styles/pagination.module.css';
 
 interface PaginationType {
   currentPage: number;

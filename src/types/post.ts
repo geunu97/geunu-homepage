@@ -1,18 +1,13 @@
-export interface PostHeaderType {
-  id: number;
+export interface PostRequestType {
   title: string;
-  date: string;
-  author: string;
-}
-
-export interface PostContentType {
   content: string;
+  userUid: string;
+  author: string;
+  date: string;
+  comment: string[];
+  likeCount: number;
 }
 
-export interface PostType extends PostContentType {
-  header: PostHeaderType;
-}
-
-export interface PostListType {
-  posts: PostType[];
+export interface PostResponseType extends PostRequestType {
+  postId: string;
 }

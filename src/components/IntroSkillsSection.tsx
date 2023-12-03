@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '../styles/introSkillsSection.module.css';
+import styles from '@/styles/introSkillsSection.module.css';
 import Image from 'next/image';
 import StretchAnimationEffect from './StretchAnimationEffect';
 
@@ -37,7 +37,6 @@ export default function IntroSkillsSection() {
       <StretchAnimationEffect targetHeight={60}>
         <p className={`${styles.title} ephesis-font`}>Skills</p>
       </StretchAnimationEffect>
-
       <StretchAnimationEffect targetHeight={80}>
         <div className={`${styles.boxWrapper} exo2-font`}>
           <p className={styles.boxTitle}>Frontend</p>

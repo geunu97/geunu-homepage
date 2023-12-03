@@ -1,36 +1,58 @@
 'use client';
 
 import Image from 'next/image';
-import styles from '../styles/postDetail.module.css';
-import { PostType } from '../types/post';
-import MarkdownViewer from './MarkdownViewer';
+import styles from '@/styles/postDetail.module.css';
+import { PostResponseType } from '@/types/post';
 import dateFormatter from '@/utils/dateFormatter';
+import Link from 'next/link';
+import { deleteBlogPost } from '@/api/blogPost';
+import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 
-// export default function PostDetail({ header, content }: PostType) {
-//   return (
-//     <div className={styles.postDetail}>
-//       <div className={styles.postHeader}>
-//         <p className={styles.postTitle}>{header.title}</p>
-//         <p className={styles.postAuthor}>{header.author}</p>
-//         <p className={styles.postDate}>{header.date}</p>
-//       </div>
-//       <MarkdownViewer content={content} />
-//     </div>
-//   );
-// }
+const TuiViewer = dynamic(() => import('@/components/TuiViewer'), {
+  ssr: false,
+});
 
-export default function PostDetail({ post }: any) {
-  return (
-    <div className={styles.postDetail}>
-      <div className={styles.postHeader}>
-        <p className={styles.title}>{post.title}</p>
-        <div className={styles.subTitle}>
-          <Image src="/images/example1.png" alt="" width={20} height={20} />
-          <p className={styles.author}>{post.author} </p>
-          <p className={styles.date}>{dateFormatter(post.date)}</p>
+interface PostDetailProps {
+  post?: PostResponseType | undefined;
+}
+
+export default function PostDetail({ post }: PostDetailProps) {
+  const router = useRouter();
+
+  const onRemove = async () => {
+    if (post && window.confirm('정말 삭제하겠습니까?')) {
+      const isSuccess = await deleteBlogPost(post.postId);
+      if (isSuccess) {
+        router.push('/blog');
+        router.refresh();
+      }
+    }
+  };
+
+  if (post) {
+    return (
+      <div className={styles.postDetail}>
+        <div className={styles.postHeader}>
+          <p className={styles.title}>{post.title}</p>
+          <div className={styles.subTitle}>
+            <div className={styles.subTitleLeft}>
+              <Image src="/images/profile.jpeg" alt="" width={20} height={20} />
+              <p className={styles.author}>{post.author} </p>
+              <p className={styles.date}>{dateFormatter(post.date, '년월일')}</p>
+            </div>
+            <div className={styles.subTitleRight}>
+              <Link href={`/blog/edit/${post.postId}`}>수정하기</Link>
+              <button onClick={onRemove}>삭제하기</button>
+            </div>
+          </div>
+        </div>
+        <div className={styles.postContentWrapper}>
+          <TuiViewer content={post.content} />
         </div>
       </div>
-      {post.content}
-    </div>
-  );
+    );
+  }
+
+  return <></>;
 }

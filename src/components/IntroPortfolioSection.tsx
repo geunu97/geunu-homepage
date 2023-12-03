@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '../styles/introPortfolioSection.module.css';
+import styles from '@/styles/introPortfolioSection.module.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -36,7 +36,6 @@ export default function IntroPortfolioSection() {
       <StretchAnimationEffect targetHeight={10}>
         <p className={`${styles.title} ephesis-font`}>Portfolio</p>
       </StretchAnimationEffect>
-
       <StretchAnimationEffect targetHeight={30}>
         <Slider {...settings}>
           {portfolioItems.map((item, index) => (

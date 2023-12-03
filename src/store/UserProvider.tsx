@@ -1,23 +1,13 @@
 'use client';
 
-import { UserCredential } from 'firebase/auth';
+import { UserActionType, UserType } from '@/types/user';
 import React, { createContext, useReducer } from 'react';
-
-interface UserType {
-  isAuth: boolean;
-  user?: UserCredential['user'];
-}
 
 const initialState: UserType = {
   isAuth: false,
 };
 
-interface ActionType {
-  type: string;
-  user?: UserCredential['user'];
-}
-
-const reducer = (state: UserType, action: ActionType) => {
+const reducer = (state: UserType, action: UserActionType) => {
   switch (action.type) {
     case 'LOGIN':
       return { isAuth: true, user: action.user };
@@ -28,7 +18,7 @@ const reducer = (state: UserType, action: ActionType) => {
   }
 };
 
-const UserContext = createContext<{ state: UserType; dispatch: React.Dispatch<ActionType> }>({
+const UserContext = createContext<{ state: UserType; dispatch: React.Dispatch<UserActionType> }>({
   state: initialState,
   dispatch: () => undefined,
 });

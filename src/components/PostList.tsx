@@ -1,13 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import styles from '../styles/postList.module.css';
-import { PostListType } from '../types/post';
+import styles from '@/styles/postList.module.css';
 import { useState } from 'react';
 import Pagination from './Pagination';
 import { getPageRange } from '@/utils/calculatePagination';
 import Image from 'next/image';
 import dateFormatter from '@/utils/dateFormatter';
+import { PostResponseType } from '@/types/post';
 
 // export default function PostList({ posts }: PostListType) {
 //   const [currentPage, setCurrentPage] = useState(1);
@@ -28,33 +28,44 @@ import dateFormatter from '@/utils/dateFormatter';
 //   );
 // }
 
-export default function PostList({ posts }: any) {
-  return (
-    <div className={styles.postList}>
-      {posts?.map((post: any) => (
-        <Link href={`/blog/detail/${post.postId}`} className={styles.postItem} key={post.postId}>
-          <Image className={styles.image} src="/images/example1.png" alt="" width={320} height={170} />
-          <div className={styles.contentWrapper}>
-            <p className={styles.title}>{post.title}</p>
-            <p className={styles.content}>{post.content}</p>
-            <div className={styles.date}>{dateFormatter(post.date)} · 45개의 댓글</div>
-          </div>
-          <div className={styles.footer}>
-            <div className={styles.footerLeft}>
-              <Image className={styles.image} src="/images/example1.png" alt="" width={25} height={25} />
-              <p>
-                <span>by</span> {post.author}
-              </p>
+interface PostListProps {
+  posts: PostResponseType[] | undefined;
+}
+
+export default function PostList({ posts }: PostListProps) {
+  if (posts && posts.length !== 0) {
+    return (
+      <div className={styles.postList}>
+        {posts.map((post: PostResponseType) => (
+          <Link href={`/blog/detail/${post.postId}`} className={styles.postItem} key={post.postId}>
+            <Image className={styles.image} src="/images/example1.png" alt="" width={320} height={170} />
+            <div className={styles.contentWrapper}>
+              <p className={styles.title}>{post.title}</p>
+              <p className={styles.content}>{post.content}</p>
+              <div className={styles.date}>
+                {dateFormatter(post.date, '년월일')}
+                {/* · 45개의 댓글 */}
+              </div>
             </div>
-            <div className={styles.footerRight}>
-              <svg viewBox="0 0 24 24">
-                <path fill="currentColor" d="m18 1-6 4-6-4-6 5v7l12 10 12-10V6z"></path>
-              </svg>
-              <p>{post.likeCount}</p>
+            <div className={styles.footer}>
+              <div className={styles.footerLeft}>
+                <Image className={styles.image} src="/images/profile.jpeg" alt="" width={25} height={25} />
+                <p>
+                  <span>by</span> {post.author}
+                </p>
+              </div>
+              <div className={styles.footerRight}>
+                <svg viewBox="0 0 24 24">
+                  <path fill="currentColor" d="m18 1-6 4-6-4-6 5v7l12 10 12-10V6z"></path>
+                </svg>
+                <p>{post.likeCount}</p>
+              </div>
             </div>
-          </div>
-        </Link>
-      ))}
-    </div>
-  );
+          </Link>
+        ))}
+      </div>
+    );
+  }
+
+  return <></>;
 }
