@@ -17,7 +17,7 @@ export default function PageAuthGuard({ children }: { children: React.ReactNode 
     authRequiredPaths.forEach((authRequiredPath) => {
       if (pathname.startsWith(authRequiredPath)) {
         router.push('/login');
-        toast.info('로그인을 해주세요.', {
+        toast.error('로그인을 해주세요.', {
           autoClose: 5000,
           theme: 'dark',
           position: toast.POSITION.BOTTOM_CENTER,

@@ -8,6 +8,8 @@ import Link from 'next/link';
 import { deleteBlogPost } from '@/api/blogPost';
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
+import { useContext } from 'react';
+import UserContext from '@/store/UserProvider';
 
 const TuiViewer = dynamic(() => import('@/components/TuiViewer'), {
   ssr: false,
@@ -19,6 +21,7 @@ interface PostDetailProps {
 
 export default function PostDetail({ post }: PostDetailProps) {
   const router = useRouter();
+  const { state } = useContext(UserContext);
 
   const onRemove = async () => {
     if (post && window.confirm('정말 삭제하겠습니까?')) {
@@ -41,10 +44,12 @@ export default function PostDetail({ post }: PostDetailProps) {
               <p className={styles.author}>{post.author} </p>
               <p className={styles.date}>{dateFormatter(post.date, '년월일')}</p>
             </div>
-            <div className={styles.subTitleRight}>
-              <Link href={`/blog/edit/${post.postId}`}>수정하기</Link>
-              <button onClick={onRemove}>삭제하기</button>
-            </div>
+            {post.userUid === state.user?.uid && (
+              <div className={styles.subTitleRight}>
+                <Link href={`/blog/edit/${post.postId}`}>수정하기</Link>
+                <button onClick={onRemove}>삭제하기</button>
+              </div>
+            )}
           </div>
         </div>
         <div className={styles.postContentWrapper}>

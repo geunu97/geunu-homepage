@@ -9,6 +9,7 @@ import useEffectAfterMount from '@/hooks/useEffectAfterMount';
 import dynamic from 'next/dynamic';
 import dateFormatter from '@/utils/dateFormatter';
 import styles from '@/styles/blogForm.module.css';
+import { toast } from 'react-toastify';
 
 const TuiEditor = dynamic(() => import('@/components/TuiEditor'), {
   ssr: false,
@@ -66,6 +67,19 @@ export default function BlogForm({ post }: BlogFormProps) {
 
     setFormTemplate('RegisterForm');
   }, [post]);
+
+  useEffectAfterMount(() => {
+    if (post && state.user) {
+      if (post.userUid !== state.user.uid) {
+        router.push('/blog');
+        toast.error('잘못된 접근입니다.', {
+          autoClose: 5000,
+          theme: 'dark',
+          position: toast.POSITION.BOTTOM_CENTER,
+        });
+      }
+    }
+  }, [post, state]);
 
   return (
     <>
