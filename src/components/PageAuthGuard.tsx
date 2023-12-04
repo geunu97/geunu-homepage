@@ -6,7 +6,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useContext, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-export default function AuthGuard({ children }: { children: React.ReactNode }) {
+export default function PageAuthGuard({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
   const { state } = useContext(UserContext);
