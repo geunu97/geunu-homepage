@@ -7,13 +7,9 @@ import dateFormatter from '@/utils/dateFormatter';
 import Link from 'next/link';
 import { deleteBlogPost } from '@/api/blogPost';
 import { useRouter } from 'next/navigation';
-import dynamic from 'next/dynamic';
 import { useContext } from 'react';
 import UserContext from '@/store/UserProvider';
-
-const TuiViewer = dynamic(() => import('@/components/TuiViewer'), {
-  ssr: false,
-});
+import MarkdownViewer from './MarkdownViewer';
 
 interface PostDetailProps {
   post?: PostResponseType | undefined;
@@ -53,7 +49,7 @@ export default function PostDetail({ post }: PostDetailProps) {
           </div>
         </div>
         <div className={styles.postContentWrapper}>
-          <TuiViewer content={post.content} />
+          <MarkdownViewer content={post.content} />
         </div>
       </div>
     );

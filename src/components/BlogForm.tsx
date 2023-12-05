@@ -6,14 +6,10 @@ import { PostRequestType, PostResponseType } from '@/types/post';
 import { createBlogPost, updateBlogPost } from '@/api/blogPost';
 import UserContext from '@/store/UserProvider';
 import useEffectAfterMount from '@/hooks/useEffectAfterMount';
-import dynamic from 'next/dynamic';
 import dateFormatter from '@/utils/dateFormatter';
 import styles from '@/styles/blogForm.module.css';
 import { toast } from 'react-toastify';
-
-const TuiEditor = dynamic(() => import('@/components/TuiEditor'), {
-  ssr: false,
-});
+import MarkdownEditor from './MarkdownEditor';
 
 interface BlogFormProps {
   post?: PostResponseType | undefined;
@@ -86,7 +82,7 @@ export default function BlogForm({ post }: BlogFormProps) {
       <form className={styles.blogForm} onSubmit={onSubmit}>
         <input type="text" placeholder="제목을 입력해주세요." value={title} onChange={(e) => setTitle(e.target.value)} />
         <div className={styles.contentWrapper}>
-          <TuiEditor content={content} setContent={setContent} />
+          <MarkdownEditor content={content} setContent={setContent} />
         </div>
         <div className={styles.submitWrapper}>
           <button type="submit">{formTemplate === 'RegisterForm' ? '등록하기' : '수정하기'}</button>
