@@ -45,8 +45,8 @@
 
 .rightWrapper > li:hover > a,
 .rightWrapper > li:hover > button {
-  background-color: rgba(162, 190, 206, 0.515);
-  color: white;
+  /* background-color: rgba(162, 190, 206, 0.515);
+  color: white; */
 }
 
 .rightWrapper > li > button {

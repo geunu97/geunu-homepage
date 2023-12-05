@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import PageAuthGuard from '@/components/PageAuthGuard';
 import '../styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
+import TemporaryHeader from '@/components/TemporaryHeader';
 
 export const metadata: Metadata = {
   title: "geunu's page",
@@ -20,7 +21,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <UserProvider>
           <SessionStorageLoader>
             <PageAuthGuard>
-              <Header />
+              {/* <Header /> */}
+              <TemporaryHeader />
               {children}
               <Footer />
               <ToastContainer />

@@ -3,16 +3,14 @@
 import { UserActionType, UserType } from '@/types/user';
 import React, { createContext, useReducer } from 'react';
 
-const initialState: UserType = {
-  isAuth: false,
-};
+const initialState: UserType = {};
 
 const reducer = (state: UserType, action: UserActionType) => {
   switch (action.type) {
     case 'LOGIN':
       return { isAuth: true, user: action.user };
     case 'LOGOUT':
-      return { ...initialState };
+      return { isAuth: false };
     default:
       return state;
   }

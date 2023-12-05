@@ -1,7 +1,7 @@
 import { UserCredential } from 'firebase/auth';
 
 export interface UserType {
-  isAuth: boolean;
+  isAuth?: boolean;
   user?: UserCredential['user'];
 }
 
