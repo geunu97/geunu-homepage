@@ -38,7 +38,7 @@ export default function PostList({ posts }: PostListProps) {
       <div className={styles.postList}>
         {posts.map((post: PostResponseType) => (
           <Link href={`/blog/detail/${post.postId}`} className={styles.postItem} key={post.postId}>
-            <Image className={styles.image} src="/images/example1.png" alt="" width={320} height={170} />
+            <div className={styles.imageWrapper}>{post.imageUrl && <Image src={post.imageUrl} alt="" fill sizes="auto" />}</div>
             <div className={styles.contentWrapper}>
               <p className={styles.title}>{post.title}</p>
               <p className={styles.content}>{post.content}</p>

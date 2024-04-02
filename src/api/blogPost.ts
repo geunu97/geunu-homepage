@@ -57,7 +57,10 @@ export const createBlogPost = async (data: PostRequestType): Promise<boolean | u
   }
 };
 
-export const updateBlogPost = async (postId: string, data: { title: string; content: string }): Promise<boolean | undefined> => {
+export const updateBlogPost = async (
+  postId: string,
+  data: { title: string; content: string; imageUrl: string },
+): Promise<boolean | undefined> => {
   try {
     const docRef = doc(db, collectionText, postId);
     await updateDoc(docRef, data);

@@ -1,7 +1,8 @@
 .introImageSection {
   position: relative;
   width: 100%;
-  height: 900px;
+  height: 100vh;
+  /* height: 900px; */
 }
 
 .introContentSection {

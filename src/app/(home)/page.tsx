@@ -5,13 +5,13 @@ import { redirect } from 'next/navigation';
 
 export default function Home() {
   /* 임시 */
-  redirect('/blog');
+  // redirect('/blog');
 
   return (
     <main>
       <IntroImageSection />
-      <IntroPortfolioSection />
-      <IntroSkillsSection />
+      {/* <IntroPortfolioSection />
+      <IntroSkillsSection /> */}
     </main>
   );
 }

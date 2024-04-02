@@ -21,8 +21,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <UserProvider>
           <SessionStorageLoader>
             <PageAuthGuard>
-              {/* <Header /> */}
-              <TemporaryHeader />
+              <Header />
+              {/* <TemporaryHeader /> */}
               {children}
               <Footer />
               <ToastContainer />
@@ -33,3 +33,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
