@@ -3,7 +3,7 @@ import { PostRequestType, PostResponseType } from '@/types/post';
 import { collection, doc, getDoc, getDocs, setDoc, deleteDoc, updateDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 
-const collectionText = 'blogPost';
+const collectionText = 'blog';
 
 export const getBlogPosts = async (): Promise<PostResponseType[] | undefined> => {
   try {
